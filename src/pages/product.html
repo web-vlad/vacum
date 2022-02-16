@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @include('../templates/head.html')
+
+<body>
+  <div class="page-wrapp">
+    <!-- BEGIN HEADER -->
+    @include('../blocks/header/header.html')
+    <!-- END HEADER -->
+
+    <main class="main">
+        <div class="container">
+
+            <!-- BEGIN BREADRUMBS -->
+            <ul class="bredrumbs">
+                <li>
+                    <a href="#">Главная</a>
+                </li>
+                <li>
+                    <a href="#">Вакуумные насосы</a>
+                </li>
+                <li>
+                    <a href="#">Пластинчато-роторные вакуумные насосы</a>
+                </li>
+                <li>
+                    <span>Промышленный пластинчато-роторный вакуумный насос Becker KVT 3.140</span>
+                </li>
+            </ul>
+            <!-- END BREADRUMBS -->
+
+            <div class="content-row row">
+
+                <div class="content-col col">
+                    <!-- BEGIN PRODUCT -->
+                    @include('../blocks/content/product.html')
+                    <!-- END PRODUCT  -->
+                </div>
+
+                <!-- BEGIN ASIDE -->
+                @include('../blocks/aside/aside.html')
+                <!-- END ASIDE  -->
+
+            </div>
+
+
+        </div>
+    </main>
+
+
+    <!-- BEGIN FOOTER -->
+    @include('../blocks/footer/footer.html')
+    <!-- END FOOTER  -->
+  </div>
+
+
+  @include('../templates/scripts.html')
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @include('../templates/head.html')
+
+<body>
+  <div class="page-wrapp">
+    <!-- BEGIN HEADER -->
+    @include('../blocks/header/header.html')
+    <!-- END HEADER -->
+
+    <main class="main">
+        <div class="container">
+
+            <!-- BEGIN BREADRUMBS -->
+            <ul class="bredrumbs">
+                <li>
+                    <a href="#">Главная</a>
+                </li>
+                <li>
+                    <span>О компании</span>
+                </li>
+            </ul>
+            <!-- END BREADRUMBS -->
+
+            <!-- BEGIN CONTENT -->
+            @include('../blocks/about/about.html')
+            <!-- END CONTENT  -->
+
+
+        </div>
+    </main>
+
+
+    <!-- BEGIN FOOTER -->
+    @include('../blocks/footer/footer.html')
+    <!-- END FOOTER  -->
+  </div>
+
+
+  @include('../templates/scripts.html')
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+// базовые подключения
+@import 'global/vars';
+//@import 'general-mixins';
+@import "sprite";
+@import 'mixins';
+//@import 'fonts';
+@import 'global/reset';
+@import 'global/general';
+
+// подключения компонентов страницы
+@import '../blocks/form/form';
+/*=== begin header ====*/
+@import '../blocks/header/header';
+/*=== end header ====*/
+/*=== begin slider ====*/
+@import '../blocks/slider/slider';
+/*=== end slider ====*/
+/*=== begin form ====*/
+@import "../blocks/form/form";
+/*=== end form ====*/
+/*=== begin advantage ====*/
+@import "../blocks/advantage/advantage";
+/*=== end advantage ====*/
+/*=== begin section popular ====*/
+@import "../blocks/popular/popular";
+/*=== end section popular ====*/
+/*=== begin banner ====*/
+@import "../blocks/banner/banner";
+/*=== end banner ====*/
+/*=== begin section equipment ====*/
+@import "../blocks/equipment/equipment";
+/*=== end section equipment ====*/
+/*=== begin section slider blog ====*/
+@import "../blocks/slider-blog/blog";
+/*=== end section slider blog ====*/
+/*=== begin content ====*/
+@import "../blocks/content/content";
+/*=== end content ====*/
+/*=== begin aside page ====*/
+@import "../blocks/aside/aside";
+/*=== end aside page ====*/
+/*=== begin footer page ====*/
+@import "../blocks/footer/footer";
+/*=== end footer page ====*/
+/*=== begin modal ====*/
+@import "../blocks/modal/modal";
+/*=== end modal ====*/

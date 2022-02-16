@@ -1,0 +1,197 @@
+.modal {
+    background-color: rgba(0,0,0,.15);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    overflow-y: auto;
+    //cursor: pointer;
+    &.active {
+        opacity: 1;
+        z-index: 50;
+    }
+    .modal__dialog {
+        position: relative;
+        //top: 152px;
+        //left: 50%;
+        margin: 152px auto 0;
+        transform: translateY(-500%);
+        @include img-transition();
+        //z-index: 150;
+        &.active {
+            transform: translateY(0);
+        }
+    }
+    .modal__dialog--city {
+        max-width: 554px;
+    }
+    .modal__content {
+        background: #fff;
+        position: relative;
+        border-radius: 8px;    
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.06);
+    }
+    .modal__close {
+        background: transparent;
+        border: none;
+        position: absolute;
+        display: inline-block;
+        width: 27px;
+        top: 24px;
+        right: 20px;
+        cursor: pointer;
+        &:hover {
+            span {
+                &::before, &::after {
+                    background: #333;
+                }
+            }
+        }
+        span {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            &::before, &::after {
+                background: #B4B4B4;
+                @include all-pseudo();
+                transform-origin: center center;
+                transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+                backface-visibility: hidden;
+            }
+            &::before {
+                transform: translate3d(0,-200%,0) rotate(45deg);
+                top: -1px;
+            }
+            &::after {
+                transform: translate3d(0,200%,0) rotate(-45deg);
+                top: -5px;
+            }
+        }
+    } 
+    .modal__header--city, .modal__body--city {
+        padding-right: 25px;
+        padding-left: 30px;
+    }
+    .modal__header--city {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 21px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid #eee;
+    }
+    .h3 {
+        font-weight: 500;
+        font-size: 2rem;
+        color: #0E0E0E;
+        display: inline-block;
+        line-height: 1.2;
+        padding-right: 25px;
+    }
+    .modal__body--city {
+        padding-bottom: 33px;
+        margin-top: 40px;
+    }
+    .modal__btn{
+        margin-top: 13px;
+        .btn {
+            font-weight: 500;
+            height: 38px;
+        }
+    }
+    .modal__list--city {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        .modal__list__item {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+            padding: 0 15px;
+            margin-bottom: 16px;
+            .modal__list__link {
+                background: transparent;
+                font-weight: 400;
+                font-size: 1.5rem;
+                color: #0E0E0E;
+                display: inline-block;
+                text-align: center;
+                line-height: 1;
+                padding: 5px 10px 6px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                cursor: pointer;
+                &:hover {
+                    border-color: #423FE0;
+                }
+            }
+            &.active {
+                .modal__list__link {
+                    border-color: #423FE0;
+                }
+            }
+        }
+    }
+}
+/*== modal contact ===*/
+.modal--contact {
+    .modal__dialog--contact {
+        max-width: 474px;
+    }
+    .modal__content {
+        padding: 40px 40px 23px 40px;
+    }
+    .modal__descr {
+        font-size: 1.4rem;
+        color: #0E0E0E;
+        display: block;
+        max-width: 90%;
+        line-height: 1.35;
+        margin-top: 18px;
+    }
+    .modal__body--contact {
+        margin-top: 27px;
+    }
+    .modal__btn {
+        margin-top: 25px;
+    }
+}
+@media (max-width: 575px) {
+    .modal {
+        .modal__dialog {
+            margin-top: 145px;
+        }
+        .modal__dialog--city {
+            max-width: 325px;
+        }
+        .modal__body--city {
+            padding-bottom: 25px;
+        }
+        .modal__list--city {
+            .modal__list__item {
+                flex: 0 0 100%;
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+        .modal__btn {
+            text-align: center;
+        }
+    }
+    .modal--contact {
+        .modal__dialog--contact {
+            max-width: 410px;
+            text-align: center;
+        }
+        .modal__descr {
+            max-width: 100%;
+        }
+    }
+}
+

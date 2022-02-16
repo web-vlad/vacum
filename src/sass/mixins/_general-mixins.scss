@@ -1,0 +1,146 @@
+@mixin bg-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@mixin flex {
+    display: flex;
+}
+@mixin flex-v-center {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-h-center {
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-all-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+//  Стандартный transition для hover-анимаций
+@mixin transition() {
+    transition: 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+}
+//  links transition
+@mixin link-transition() {
+    transition: background 0.3s ease-in-out,border-color 0.3s ease-in-out,color 0.3s ease-in-out;
+}
+//  all transition
+@mixin all-transition() {
+    transition: all 0.3s ease;
+}
+//  img transition
+@mixin img-transition() {
+    transition: all 0.5s ease;
+}
+@mixin scale-img() {
+    transform: scale(1.1);
+}
+@mixin scale-all() {
+    transform: scale(0);
+}
+@mixin scale-all-hover() {
+    transform: scale(1);
+}
+@mixin scale-x() {
+    transform: scaleX(0);
+}
+@mixin scale-x-hover() {
+    transform: scaleX(1);
+}
+@mixin scale-y() {
+    transform: scaleY(0);
+}
+@mixin scale-y-hover() {
+    transform: scaleY(1);
+}
+@mixin transform-position() {
+    transform-origin: center center;
+}
+@mixin all-sprite() {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 50%;
+    left: 0;
+}
+@mixin pseudo() {
+    position: absolute;
+    display: block;
+    content: "";
+}
+@mixin all-pseudo() {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+@mixin sprite-pseudo() {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+@mixin box-img() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ANIME
+@mixin anim-img() {
+    animation: bounce 1s;
+}
+
+// list news 3 strong <= 
+@mixin line-clamp($line-height: $line-height-base) {
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    position: relative;
+    line-height: $line-height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 !important;
+  
+    &::after {
+      content: "...";
+      text-align: right;
+      bottom: 0;
+      right: 0;
+      width: 25%;
+      display: block;
+      position: absolute;
+      max-height: calc(1em * #{$line-height});
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+    }
+  
+    @supports (-webkit-line-clamp: 1) {
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+  @mixin line-clamp-lines($lines, $line-height: $line-height-base) {
+    --line-clamp: #{$lines};
+  
+    -webkit-line-clamp: $lines;
+    max-height: calc(1em * #{$line-height} * #{$lines});
+  
+    @supports (--css: variables) {
+      -webkit-line-clamp: var(--line-clamp);
+      max-height: calc(1em * #{$line-height} * var(--line-clamp));
+    }
+  }
